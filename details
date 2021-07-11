@@ -1,0 +1,54 @@
+1)install sanctum   & configuration & migration
+
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+
+2)install laravel jeatstrem authentication blade
+
+composer require laravel/jetstream
+php artisan jetstream:install inertia
+php artisan migrate
+
+3)npm install for install package.json dependancies
+
+4)create jetstream views 
+ php artisan vendor:publish --tag=jetstream-views
+
+ 5)npm run hot 
+ for refresh automaticlly browser after each changes
+
+ 6)laravel 8 include tailwind css automaticlly 
+
+
+
+
+
+ pusher)
+ set keys in .env
+
+ uncomment broddcat in app.php in config
+
+ run composer require pusher/pusher-php-server "~4.0"
+
+ run npm install --save laravel-echo pusher-js
+
+ go to resources ->js->boptstrap 
+ uncomment last commend from improt
+
+ go to webpack.mix.js
+ insert -> require('dotenv').config();
+
+ for set up pusher we should create event and listener
+
+ go to EventServiceProvider
+ add ->  'App\Event\NewChatMessage' =>[
+            'App\Listeners\SendMessageNotifiation'
+        ]
+         for creating  new event and listener
+
+
+php artisan event:generate
+
+set controller
+ser route->channel.php
